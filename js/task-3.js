@@ -21,7 +21,10 @@ class Storage {
   };
 
   removeItem(item){
-    this.items = this.items.filter(i => i !== item);
+    let index = this.items.indexOf(item);
+    if (index > -1) {
+      return this.items.splice(index, 1);
+    };
   };
 };
 
